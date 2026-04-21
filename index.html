@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #000, #2e2b5a);
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Container */
+        .container {
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text {
+            margin-top: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #d9b44a;
+        }
+
+        /* Message Section */
+        .message {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 10px #d9b44a;
+            line-height: 1.8;
+        }
+
+        /* Surprise Section */
+        .surprise button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #d9b44a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #surpriseMessage {
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Audio Control */
+        #musicToggle {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background: #d9b44a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #d9b44a;
+        }
+
+        .footer a {
+            color: #d9b44a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Upload your Image Here -->
+            <img src="your-image.jpg" alt="Happy Birthday Image" class="hero-image">
+            <div class="hero-text">
+                <h1>Happy Birthday</h1>
+                <p>To Someone Who Inspires Me</p>
+            </div>
+        </section>
+
+        <!-- Message Section -->
+        <section class="message">
+            <p>Happy Birthday,</p>
+            <p>I hope this day brings you as much warmth and happiness as your presence brings to those around you.</p>
+            <p>I know that we’re just beginning to understand one another, and I admire the person you are—filled with grace and strength.</p>
+            <p>On your special day, I want to say that you’re appreciated more than words can express.</p>
+            <p>Yours,</p>
+            <p><b>Zayn</b></p>
+        </section>
+
+        <!-- Interactive Section -->
+        <section class="surprise">
+            <button id="surpriseButton">Click Here for a Little Surprise</button>
+            <div id="surpriseMessage">
+                <h2>You’re Extraordinary</h2>
+                <p>Here’s to a life filled with happiness and ease. Wishing you a day as lovely as you are.</p>
+            </div>
+        </section>
+        
+        <!-- Background Music -->
+        <audio id="backgroundMusic" loop>
+            <source src="him_and_i.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="musicToggle">Play Music</button>
+    </div>
+
+    <div class="footer">
+        <p>Created with 💖 by <b>Zayn Baloch</b></p>
+    </div>
+
+    <script>
+        // Toggle Surprise
+        const surpriseButton = document.getElementById("surpriseButton");
+        const surpriseMessage = document.getElementById("surpriseMessage");
+        surpriseButton.addEventListener("click", () => {
+            surpriseMessage.style.display = "block";
+        });
+
+        // Background Music Control
+        const music = document.getElementById("backgroundMusic");
+        const musicToggle = document.getElementById("musicToggle");
+        let isPlaying = false;
+
+        musicToggle.addEventListener("click", () => {
+            if (isPlaying) {
+                music.pause();
+                musicToggle.textContent = "Play Music";
+            } else {
+                music.play();
+                musicToggle.textContent = "Pause Music";
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
